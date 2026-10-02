@@ -420,3 +420,141 @@ a:focus-visible {
   bottom: 2rem;
   color: var(--color-primary);
 }
+
+/* ================================
+   About section
+================================ */
+
+.about-section {
+  background: var(--color-surface);
+}
+
+.about-section h2,
+.events-section h2,
+.contact-section h2 {
+  max-width: 38rem;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+}
+
+.about-grid {
+  display: grid;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.about-grid > div > p {
+  font-size: 1.1rem;
+}
+
+.feature-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.feature-card,
+.event-card {
+  padding: 1.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-medium);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.feature-icon {
+  display: inline-grid;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-bottom: 1rem;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #1a0d08;
+  font-weight: 700;
+}
+
+.feature-card h3,
+.event-card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.feature-card p,
+.event-card p {
+  color: var(--color-text-muted);
+}
+
+/* ================================
+   Events cards
+================================ */
+
+.cards-grid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.event-card {
+  transition:
+    border-color var(--transition-normal),
+    transform var(--transition-normal);
+}
+
+.event-card:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-0.35rem);
+}
+
+.event-card-icon {
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+}
+
+.event-card .text-link {
+  display: inline-block;
+  margin-top: 1.25rem;
+  color: var(--color-primary);
+}
+
+/* ================================
+   Newsletter
+================================ */
+
+.newsletter {
+  display: grid;
+  gap: 2rem;
+  padding: 2rem;
+  border-radius: var(--radius-large);
+  background:
+    linear-gradient(135deg, rgba(243, 108, 33, 0.22), transparent),
+    var(--color-surface);
+}
+
+.newsletter-form {
+  display: grid;
+  gap: 0.75rem;
+  align-content: center;
+}
+
+.newsletter-form input {
+  min-height: 3rem;
+  padding-inline: 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-small);
+  outline: 0;
+  background: var(--color-background);
+  color: var(--color-text);
+  font: inherit;
+}
+
+.newsletter-form input:focus {
+  border-color: var(--color-accent);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
