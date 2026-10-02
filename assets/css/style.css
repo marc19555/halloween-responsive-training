@@ -1,0 +1,224 @@
+/* ================================
+   Base styles
+================================ */
+
+:root {
+  --color-background: #120d1b;
+  --color-surface: #21152d;
+  --color-primary: #f36c21;
+  --color-primary-dark: #bd4b13;
+  --color-accent: #a7e22e;
+  --color-text: #fff8ed;
+  --color-text-muted: #c8bdca;
+  --color-border: rgba(255, 255, 255, 0.12);
+
+  --font-main: Arial, Helvetica, sans-serif;
+
+  --container-width: 1120px;
+  --header-height: 72px;
+
+  --radius-small: 0.5rem;
+  --radius-medium: 1rem;
+  --radius-large: 1.5rem;
+
+  --shadow-soft: 0 1rem 3rem rgba(0, 0, 0, 0.2);
+
+  --transition-fast: 180ms ease;
+  --transition-normal: 300ms ease;
+}
+
+/* ================================
+   Reset
+================================ */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-main);
+  line-height: 1.6;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+}
+
+/* ================================
+   Reusable layout
+================================ */
+
+.container {
+  width: min(100% - 2rem, var(--container-width));
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: 5rem;
+}
+
+.section h2 {
+  margin-bottom: 1rem;
+  color: var(--color-primary);
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+.section p {
+  max-width: 42rem;
+  color: var(--color-text-muted);
+}
+
+/* ================================
+   Header
+================================ */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  min-height: var(--header-height);
+  border-bottom: 1px solid var(--color-border);
+  background: rgba(18, 13, 27, 0.92);
+  backdrop-filter: blur(0.75rem);
+}
+
+.navbar {
+  display: flex;
+  min-height: var(--header-height);
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.logo {
+  color: var(--color-primary);
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.nav-toggle {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-small);
+  background: transparent;
+  color: var(--color-text);
+}
+
+.nav-list {
+  display: none;
+  list-style: none;
+}
+
+/* ================================
+   Hero
+================================ */
+
+.hero {
+  display: grid;
+  min-height: calc(100vh - var(--header-height));
+  align-items: center;
+  padding-block: 6rem;
+  background:
+    radial-gradient(circle at top right, rgba(167, 226, 46, 0.14), transparent 35%),
+    radial-gradient(circle at bottom left, rgba(243, 108, 33, 0.2), transparent 40%);
+}
+
+.hero .container {
+  max-width: 760px;
+}
+
+.eyebrow {
+  margin-bottom: 1rem;
+  color: var(--color-accent);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  max-width: 700px;
+  margin-bottom: 1.25rem;
+  font-size: clamp(2.75rem, 10vw, 6rem);
+  line-height: 0.95;
+}
+
+.hero p:not(.eyebrow) {
+  max-width: 34rem;
+  margin-bottom: 2rem;
+  color: var(--color-text-muted);
+  font-size: 1.1rem;
+}
+
+/* ================================
+   Buttons
+================================ */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding-inline: 1.5rem;
+  border-radius: 999px;
+  background: var(--color-primary);
+  color: #1a0d08;
+  font-weight: 700;
+  transition:
+    background-color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.button:hover {
+  background: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+.button:focus-visible,
+.nav-toggle:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
+/* ================================
+   Footer
+================================ */
+
+.site-footer {
+  padding-block: 2rem;
+  border-top: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+  text-align: center;
+  font-size: 0.9rem;
+}
